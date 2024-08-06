@@ -1,0 +1,15 @@
+MeLi API
+https://developers.mercadolibre.com.ar/es_ar/categorias-y-atributos
+
+Api ejemplo: /categories/MLA1055
+
+AWS API Gateway
+https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-api-as-simple-proxy-for-http.html
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html
+
+How do I turn on CloudWatch Logs for troubleshooting my API Gateway REST API or WebSocket API?
+https://repost.aws/knowledge-center/api-gateway-cloudwatch-logs
+
+Set up CloudWatch logging for REST APIs in API Gateway
+https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#apigateway-cloudwatch-log-formats
