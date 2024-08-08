@@ -64,6 +64,11 @@ Utilizado para deployar toda la infraestructura de meli-proxy.
 ### Python
 Lenguaje de programacion utilizado para desarrollar el script que corre el comando "terraform apply -auto-approve", y luego genera trafico hacia la api en forma de GET requests.
 
+## Uso
+- Buscar el archivo ./tf/main.tf, ingresar las credenciales de AWS en los campos "access_key" y "secret_key", y guardar. Aclaracion: No es buena practica hardcodear credenciales, en este caso lo hacemos por facilidad de uso.
+- Ejecutar el script "hit-that-sexy-api.py". El mismo se encargara de ejecutar todo el stack de terraform, obtener el url de nuestra nueva API Gateway e iniciar los GET requests a la api de MeLi (MLA1055 a MLA5000) para generar trafico.
+
+
 ## Documentacion consultada
 
 MeLi API
