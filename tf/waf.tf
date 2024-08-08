@@ -16,7 +16,7 @@ resource "aws_wafv2_web_acl" "WafV2WebAcl" {
 
     statement {
       rate_based_statement {
-        limit              = 1000 # Requests per 1 minute
+        limit              = 1000
         aggregate_key_type = "IP"
 
         scope_down_statement {
@@ -51,7 +51,7 @@ resource "aws_wafv2_web_acl" "WafV2WebAcl" {
 
     statement {
       rate_based_statement {
-        limit              = 10000 # Requests per 1 minute
+        limit              = 10000
         aggregate_key_type = "IP"
 
         scope_down_statement {
@@ -128,7 +128,6 @@ resource "aws_wafv2_web_acl" "WafV2WebAcl" {
   }
 }
 
-
 resource "aws_wafv2_ip_set" "WafV2IpSet" {
   name        = "${var.api_name}-ip-set"
   scope       = "REGIONAL"
@@ -139,7 +138,6 @@ resource "aws_wafv2_ip_set" "WafV2IpSet" {
   ip_address_version = "IPV4"
 }
 
-# Attach Web ACL to API Gateway
 resource "aws_wafv2_web_acl_association" "WafV2WebAclAssociation" {
   resource_arn = aws_api_gateway_stage.ApiGatewayStage.arn
   web_acl_arn  = aws_wafv2_web_acl.WafV2WebAcl.arn

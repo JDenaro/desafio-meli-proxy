@@ -38,8 +38,6 @@ resource "aws_api_gateway_integration" "ApiGatewayIntegration" {
   uri                     = "https://api.mercadolibre.com/{proxy}"
   integration_http_method = "GET"
 
-  #cache_key_parameters = ["method.request.path.proxy"]
-
   timeout_milliseconds = 29000
   request_parameters = {
     "integration.request.path.proxy" = "method.request.path.proxy"
@@ -61,11 +59,6 @@ resource "aws_api_gateway_stage" "ApiGatewayStage" {
   rest_api_id   = aws_api_gateway_rest_api.ApiGatewayRestApi.id
   stage_name    = var.stage_name
 
-  # access_log_settings {
-  #   destination_arn = aws_cloudwatch_log_group.CwLogGroup.arn
-  #   format          = "{ \"requestId\":\"$context.requestId\", \"extendedRequestId\":\"$context.extendedRequestId\",\"ip\": \"$context.identity.sourceIp\", \"caller\":\"$context.identity.caller\", \"user\":\"$context.identity.user\", \"requestTime\":\"$context.requestTime\", \"httpMethod\":\"$context.httpMethod\", \"resourcePath\":\"$context.resourcePath\", \"status\":\"$context.status\", \"protocol\":\"$context.protocol\", \"responseLength\":\"$context.responseLength\" }"
-  # }
-  # depends_on = [aws_cloudwatch_log_group.CwLogGroup, aws_api_gateway_account.ApiGatewayAccount]
 }
 
 resource "aws_api_gateway_method_settings" "ApiGatewayMethodSettings" {

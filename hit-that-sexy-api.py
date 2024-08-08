@@ -45,8 +45,8 @@ def make_api_calls(api_url):
     for i in range(1055, 5000):
         try:
             response = requests.get(api_url + "/categories/MLA" + str(i))
-            response.raise_for_status()  # Raise an exception for error HTTP status codes
-            print(response.json())  # Assuming JSON response
+            response.raise_for_status()
+            print(response.json())
         except requests.exceptions.RequestException as e:
             print(f"Error al hacer llamada a API: {e}")
 
